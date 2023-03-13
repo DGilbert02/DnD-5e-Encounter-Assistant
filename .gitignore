@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/DnD 5e Encounter Calculator/Class1.cs
+/DnD 5e Encounter Calculator/CR-Calc.cs
+/DnD 5e Encounter Calculator/Class1.cs

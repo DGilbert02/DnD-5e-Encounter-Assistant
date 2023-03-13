@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DnD_5e_Encounter_Calculator
 {
-    internal class Class1
+    internal class MonsterMod
     {
     }
 }

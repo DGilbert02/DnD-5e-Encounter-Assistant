@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -11,9 +12,13 @@ namespace DnD_5e_Encounter_Calculator
 {
     public class CRCalculator:PartyList
     {
-        var calculator = new Calculator();
-
-        int total = Party.Sum();
-        Console.Write(var calculator.Divide(total, 4));
+        public CRCalculator()
+        {
+            int total = AdventurerList.Sum(x => Convert.ToInt32(x));
+            //int sum = AdventurerList.Sum();
+            //Console.Write(Calculator.Divide(sum , 4));
+            double PartyCR = total / 4;
+            Console.WriteLine("The Challenge Rating of the party is" + PartyCR);
+        }
     }
 }

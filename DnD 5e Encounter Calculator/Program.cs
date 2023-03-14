@@ -2,9 +2,9 @@
 
 namespace DnD_5e_Encounter_Calculator
 {
-    public class Program:PartyList
+    internal class Program:PartyList
     {
-        public void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("Hello I'm the D&D Encounter Assistant, How Can I Help You Today?");
             Console.WriteLine("Press 1 to Use The Combat Rating Calulator, Press 2 to Veiw Entire Monster List");
@@ -15,7 +15,7 @@ namespace DnD_5e_Encounter_Calculator
                     Console.WriteLine("How Many Members are in Your Party");
                     int numberOfMembers = int.Parse(Console.ReadLine());
                     Console.WriteLine("Please Input the Level of Each Party Member");
-
+                    
                     for (int i = 0; i < numberOfMembers; i++)
                     {
                         var adventurer = new Party();

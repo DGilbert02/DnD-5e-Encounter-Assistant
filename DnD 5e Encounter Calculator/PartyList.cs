@@ -8,8 +8,8 @@ namespace DnD_5e_Encounter_Calculator
 {
     public class PartyList
     {
-        public var AdventurerList = new List<Party>();
-
+        public List<Party> AdventurerList = new();
+        
         public class Party
         {
             public int AdventurerLvl;

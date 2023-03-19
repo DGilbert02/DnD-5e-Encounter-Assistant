@@ -1,5 +1,5 @@
 ﻿using System.Runtime.ExceptionServices;
-
+using static DnD_5e_Encounter_Calculator.CRCalculator;
 namespace DnD_5e_Encounter_Calculator
 {
     internal class Program:PartyList
@@ -9,7 +9,8 @@ namespace DnD_5e_Encounter_Calculator
             Console.WriteLine("Hello I'm the D&D Encounter Assistant, How Can I Help You Today?");
             Console.WriteLine("Press 1 to Use The Combat Rating Calulator, Press 2 to Veiw Entire Monster List");
             int Response1 = int.Parse(Console.ReadLine());
-
+            PartyList partyList = new();
+            CRCalculator cRCalculator = new();
             if (Response1 == 1)
             {
                     Console.WriteLine("How Many Members are in Your Party");
@@ -19,10 +20,11 @@ namespace DnD_5e_Encounter_Calculator
                     for (int i = 0; i < numberOfMembers; i++)
                     {
                         var adventurer = new Party();
-                        Console.WriteLine("Please state the level of the next party member");
                         adventurer.AdventurerLvl = int.Parse(Console.ReadLine());
-                        AdventurerList.Add(adventurer);
+                        partyList.AdventurerList.Add(adventurer);
+                        Console.WriteLine("Please state the level of the next party member");
                     }
+                Console.WriteLine("The Challenge Rating of the party is" + cRCalculator.CRCalc() + "!");
             }
 
             if (Response1 == 2)

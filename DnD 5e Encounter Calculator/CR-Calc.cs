@@ -10,15 +10,13 @@ using Xceed.Wpf.Toolkit;
 
 namespace DnD_5e_Encounter_Calculator
 {
-    public class CRCalculator:PartyList
+    internal class CRCalculator : Program 
     {
-        public CRCalculator()
+        public double CRCalc()
         {
             int total = AdventurerList.Sum(x => Convert.ToInt32(x));
-            //int sum = AdventurerList.Sum();
-            //Console.Write(Calculator.Divide(sum , 4));
             double PartyCR = total / 4;
-            Console.WriteLine("The Challenge Rating of the party is" + PartyCR);
+            return PartyCR;
         }
     }
 }

@@ -29,8 +29,7 @@ namespace DnD_5e_Encounter_Calculator
 
             if (Response1 == 2)
             {
-                Console.WriteLine("Not currently implimented.");
-                //DnD5eApiCall.InitializeAPI();
+                DnD5eApiCall.InitializeAPI();
             }
 
             else

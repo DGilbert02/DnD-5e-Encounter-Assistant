@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Net.Http;
 
 namespace DnD_5e_Encounter_Calculator
 {
@@ -13,23 +14,31 @@ namespace DnD_5e_Encounter_Calculator
 
         public static void InitializeAPI()
         {
-            DnDAPI = new HttpClient();
-            DnDAPI.BaseAddress = new Uri("https://www.dnd5eapi.co/api/monsters/");
-           // DnDAPI.DefaultRequestHeaders.Accept.Clear();
-           // DnDAPI.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            DnDAPI = new HttpClient
+            {
+                BaseAddress = new Uri("https://www.dnd5eapi.co/api/monsters/")
+            };
+            // DnDAPI.DefaultRequestHeaders.Accept.Clear();
+            // DnDAPI.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task LoadMonsters(string monster)
+        internal static async Task<MonsterModel> LoadMonsters(string name)
         {
             string url = "";
 
-            url = $"https://www.dnd5eapi.co/api/monsters/{monster}/";
+            url = $"https://www.dnd5eapi.co/api/monsters/{name}/";
 
             using (HttpResponseMessage response = await DnD5eApiCall.DnDAPI.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
+                    MonsterModel monster = await response.Content.ReadAsAsync<MonsterModel>();
 
+                    return monster;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
                 }
             }
         }

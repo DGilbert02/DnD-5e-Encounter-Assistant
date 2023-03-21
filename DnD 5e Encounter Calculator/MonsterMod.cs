@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DnD_5e_Encounter_Calculator
 {
-    internal class MonsterMod
+    internal class MonsterModel
     {
+        internal string Name { get; set; }
+        internal int Challenge_Rating { get; set; }
     }
 }

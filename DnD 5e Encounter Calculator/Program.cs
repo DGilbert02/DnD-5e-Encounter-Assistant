@@ -1,8 +1,10 @@
 ﻿using System.Runtime.ExceptionServices;
 using static DnD_5e_Encounter_Calculator.CRCalculator;
+using static DnD_5e_Encounter_Calculator.PartyList;
+
 namespace DnD_5e_Encounter_Calculator
 {
-    internal class Program:PartyList
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -24,7 +26,7 @@ namespace DnD_5e_Encounter_Calculator
                         partyList.AdventurerList.Add(adventurer);
                         Console.WriteLine("Please state the level of the next party member");
                     }
-                Console.WriteLine("The Challenge Rating of the party is" + cRCalculator.CRCalc() + "!");
+                Console.WriteLine("The Challenge Rating of the party is " + cRCalculator.CRCalc(partyList.AdventurerList) + "!");
             }
 
             if (Response1 == 2)

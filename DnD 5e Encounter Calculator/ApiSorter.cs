@@ -22,170 +22,122 @@ using System.Timers;
 using System.Diagnostics.Metrics;
 using System.Reflection.Emit;
 using System.Xml.Linq;
+using static DnD_5e_Encounter_Calculator.CR0;
 
 namespace DnD_5e_Encounter_Calculator
 {
     internal class ApiSorter
     {
-        internal ApiSorter(int PartyCR)
-        {// all Monsters to be made into Console.Writelines
+        
+        string displayList = "";
+        internal ApiSorter(int PartyCR,CR0 cr0)
+        {// all Monsters to be made into lists by CR
             if (PartyCR == 0) 
             {
-                //List<CR1Monster> cr1 = new()
-                //{
-                //    new CR1Monster() {Name = "Awakened Shrub" },
-                //    new CR1Monster() { "Baboon" },
-                //    new CR1Monster() { "Badger" },
-                //    new CR1Monster() { "Bat" },
-                //    new CR1Monster() { "Cat" },
-                //    new CR1Monster() { "Commoner" },
-                //    new CR1Monster() { "Crab" },
-                //    new CR1Monster() { "Deer" },
-                //    new CR1Monster() { "Eagle" },
-                //    new CR1Monster() { "Frog" },
-                //    new CR1Monster() { "Giant Fire Beetle" },
-                //    new CR1Monster() { "Goat" },
-                //    new CR1Monster() { "Hawk" },
-                //    new CR1Monster() { "Homunculus" },
-                //    new CR1Monster() { "Hyena" },
-                //    new CR1Monster() { "Jackal" },
-                //    new CR1Monster() { "Lemure" },
-                //    new CR1Monster() { "Lizard" },
-                //    new CR1Monster() { "Octopus" },
-                //    new CR1Monster() { "Owl" },
-                //    new CR1Monster() { "Quipper" },
-                //    new CR1Monster() { "Rat" },
-                //    new CR1Monster() { "Raven" },
-                //    new CR1Monster() { "Scorpion" },
-                //    new CR1Monster() { "Sea-Horse" },
-                //    new CR1Monster() { "Shrieker" },
-                //    new CR1Monster() { "Spider" },
-                //    new CR1Monster() { "Vulture" },
-                //    new CR1Monster() { "Weasel" }
-                //}
+                string displayList = cr0.CR0Print();
+            }
+            else if (PartyCR >= 0.1 && PartyCR <= 0.125)
+            {
+                
+            }
+            else if (PartyCR >= 0.126 && PartyCR <= 0.25) 
+            {
+                //Acolyte
+                //Axe Beak
+                //Blink Dog
+                //Boar
+                //Constrictor Snake
+                //Draft Horse
+                //Dretch
+                //Drow
+                //Elk
+                //Flying Sword
+                //Giant Badger
+                //Giant Bat
+                //Giant Centipede
+                //Giant Frog
+                //Giant Lizard
+                //Giant Owl
+                //Giant Piosonous Snake
+                //Giant Wolf Spider
+                //Goblin
+                //Grinlock
+                //Panther
+                //Pseudodragon
+                //Pteranodon
+                //Riding Horse
+                //Skeleton
+                //Sprite
+                //Steam Mephit
+                //Swarm Of Bats
+                //Swarm Of Rats
+                //Swarm Of Ravens
+                //Violet Fungus
+                //Wolf
+                //Zombie
+            }
+            else if (PartyCR >= .26 && PartyCR <= .50)
+            {
+                //Crocodile
+                //Darkmantle
+                //Deep Gnome
+                //Dust Mephit
+                //Giant Goat
+                //Giant Sea Horse
+                //Giant Wasp
+                //Gnoll
+                //Gray Ooze
+                //Hobgoblin
+                //Ice Mephit
+                //Lizardfolk
+                //Magma Mephit
+                //Magmin
+                //Orc
+                //Reef Shark
+                //Rust Monster
+                //Sahuagin
+                //Satyr
+                //Scout
+                //Shadow
+                //Swarm Of Insects
+                //Swarm Of Beetles
+                //Swarm Of Centipedes
+                //Swarm Of Spiders
+                //Swarm Of Wasps
+                //Thug
+                //Warhorse Skeleton
+                //Worg
 
             }
-            if (PartyCR >= 0.1 && PartyCR <= 0.125)
+            else if (PartyCR >= .51 && PartyCR <= 1)
             {
-                //Bandit
-                //Blood Hawk
-                //Camel
-                //Cultist
-                //Diseased Giant Rat
-                //Flying Snake
-                //Giant Crab
-                //Giant Rat
-                //Giant Weasel
-                //Guard
-                //Kobold
-                //Mastiff
-                //Merfolk
-                //Mule
-                //Noble
-                //Poisonous Snake
-                //Pony
-                //Stirge
-                //Tribal Warrior
-                //Twig Blight
-                 }
-            if (PartyCR >= 0.126 && PartyCR <= 0.25) 
-            {
-                Acolyte
-                Axe Beak
-                Blink Dog
-                Boar
-                Constrictor Snake
-                Draft Horse
-                Dretch
-                Drow
-                Elk
-                Flying Sword
-                Giant Badger
-                Giant Bat
-                Giant Centipede
-                Giant Frog
-                Giant Lizard
-                Giant Owl
-                Giant Piosonous Snake
-                Giant Wolf Spider
-                Goblin
-                Grinlock
-                Panther
-                Pseudodragon
-                Pteranodon
-                Riding Horse
-                Skeleton
-                Sprite
-                Steam Mephit
-                Swarm Of Bats
-                Swarm Of Rats
-                Swarm Of Ravens
-                Violet Fungus
-                Wolf
-                Zombie
+                //Animated Armor
+                //Brass Dragon Wyrmling
+                //Brown Bear
+                //Bugbear
+                //Copper Dragon Wyrmling
+                //Death Dog
+                //Dire Wolf
+                //Dryad
+                //Duergar
+                //Ghoul
+                //Giant Eagle
+                //Giant Hyena
+                //Giant Octopus
+                //Giant Spider
+                //Giant Toad
+                //Giant Vulture
+                //Harpy
+                //Hippogriff
+                //Imp
+                //Lion
+                //Quasit
+                //Specter
+                //Spy
+                //Swarm Of Quippers
+                //Tiger
             }
-            if (PartyCR >= .26 && PartyCR <= .50)
-            {
-                Crocodile
-                Darkmantle
-                Deep Gnome
-                Dust Mephit
-                Giant Goat
-                Giant Sea Horse
-                Giant Wasp
-                Gnoll
-                Gray Ooze
-                Hobgoblin
-                Ice Mephit
-                Lizardfolk
-                Magma Mephit
-                Magmin
-                Orc
-                Reef Shark
-                Rust Monster
-                Sahuagin
-                Satyr
-                Scout
-                Shadow
-                Swarm Of Insects
-                Swarm Of Beetles
-                Swarm Of Centipedes
-                Swarm Of Spiders
-                Swarm Of Wasps
-                Thug
-                Warhorse Skeleton
-                Worg
-
-            }
-            if (PartyCR >= .51 && PartyCR <= 1)
-            {
-                Animated Armor
-                Brass Dragon Wyrmling
-                Brown Bear
-                Bugbear
-                Copper Dragon Wyrmling
-                Death Dog
-                Dire Wolf
-                Dryad
-                Duergar
-                Ghoul
-                Giant Eagle
-                Giant Hyena
-                Giant Octopus
-                Giant Spider
-                Giant Toad
-                Giant Vulture
-                Harpy
-                Hippogriff
-                Imp
-                Lion
-                Quasit
-                Specter
-                Spy
-                Swarm Of Quippers
-                Tiger
-            }
-            if (PartyCR >= 1.1 && PartyCR <= 2) 
+            else if (PartyCR >= 1.1 && PartyCR <= 2) 
             {
                 Allosaurus
                 Ankheg
@@ -229,7 +181,7 @@ namespace DnD_5e_Encounter_Calculator
                 White Dragon Wyrmling
                 Will O Wisp
             }
-            if (PartyCR >= 2.1 && PartyCR <= 3) 
+            else if (PartyCR >= 2.1 && PartyCR <= 3) 
             {
                 Ankylosaurus
                 Basilisk
@@ -255,7 +207,7 @@ namespace DnD_5e_Encounter_Calculator
                 Winter Wolf
                 Yeti
             }
-            if (PartyCR >= 3.1 && PartyCR <= 4) 
+            else if (PartyCR >= 3.1 && PartyCR <= 4) 
             {
                 Banshee
                 Black Pudding
@@ -272,7 +224,7 @@ namespace DnD_5e_Encounter_Calculator
                 Wereboar
                 Weretiger
             }
-            if (PartyCR >= 4.1 && PartyCR <= 5)
+            else if (PartyCR >= 4.1 && PartyCR <= 5)
             {
                 Air - Elemental
                 Barbed Devil
@@ -301,7 +253,7 @@ namespace DnD_5e_Encounter_Calculator
                 Wraith
                 Xorn
             }
-            if (PartyCR >= 5.1 && PartyCR <= 6) 
+            else if (PartyCR >= 5.1 && PartyCR <= 6) 
             {
                 Chimera
                 Cyclops
@@ -315,7 +267,7 @@ namespace DnD_5e_Encounter_Calculator
                 Young Brass Dragon
                 Young White Dragon
             }
-            if (PartyCR >= 6.1 && PartyCR <= 7) 
+            else if (PartyCR >= 6.1 && PartyCR <= 7) 
             { 
                 Giant Ape
                 Oni
@@ -323,7 +275,7 @@ namespace DnD_5e_Encounter_Calculator
                 Stone Giant
                 Young Black Dragon
             }
-            if (PartyCR >= 7.1 && PartyCR <= 8) 
+            else if (PartyCR >= 7.1 && PartyCR <= 8) 
             {
                 Assassin
                 Chain Devil
@@ -336,7 +288,7 @@ namespace DnD_5e_Encounter_Calculator
                 Young Bronze Dragon
                 Young Green Dragon
             }
-            if (PartyCR >= 8.1 && PartyCR <= 9) 
+            else if (PartyCR >= 8.1 && PartyCR <= 9) 
             { 
                 Bone Devil
                 Clay Golem
@@ -347,7 +299,7 @@ namespace DnD_5e_Encounter_Calculator
                 Young Blue Dragon
                 Young Sliver Dragon
             }
-            if (PartyCR >= 9.1 && PartyCR <= 10)
+            else if (PartyCR >= 9.1 && PartyCR <= 10)
             {
                 Aboleth
                 Deva
@@ -356,7 +308,7 @@ namespace DnD_5e_Encounter_Calculator
                 Young Gold Dragon
                 Young Red Dragon
             }
-            if (PartyCR >= 10.1 && PartyCR <= 11) 
+            else if (PartyCR >= 10.1 && PartyCR <= 11) 
             {
                 Behir
                 Djinni
@@ -366,12 +318,12 @@ namespace DnD_5e_Encounter_Calculator
                 Remorhaz
                 Roc    
             }
-            if (PartyCR >= 11.1 && PartyCR <= 12) 
+            else if (PartyCR >= 11.1 && PartyCR <= 12) 
             {
                 Archmage
                 Erinyes 
             }
-            if (PartyCR >= 12.1 && PartyCR <= 13)
+            else if (PartyCR >= 12.1 && PartyCR <= 13)
             {
                 Adult Brass Dragon
                 Adult White Dragon
@@ -380,20 +332,20 @@ namespace DnD_5e_Encounter_Calculator
                 Storm Giant
                 Vampire
             }
-            if (PartyCR >= 13.1 && PartyCR <= 14)
+            else if (PartyCR >= 13.1 && PartyCR <= 14)
             {
                 Adult Black Dragon
                 Adult Copper Dragon
                 Ice Devil
                     }
-            if (PartyCR >= 14.1 && PartyCR <= 15)
+            else if (PartyCR >= 14.1 && PartyCR <= 15)
             {
                 Adult Bronze Dragon
                 Adult Green Dragon
                 Mummy Lord
                 Purple Worm
             }
-            if (PartyCR >= 15.1 && PartyCR <= 16)
+            else if (PartyCR >= 15.1 && PartyCR <= 16)
             {
                 Adult Blue Dragon
                 Adult Silver Dragon
@@ -401,24 +353,24 @@ namespace DnD_5e_Encounter_Calculator
                 Marilith
                 Planetar
                     }
-            if (PartyCR >= 16.1 && PartyCR <= 17.5)
+            else if (PartyCR >= 16.1 && PartyCR <= 17.5)
             {
                 Adult Gold Dragon
                 Adult Red Dragon
                 Androsphinx
                 Dragon Turtle
                     }
-            if (PartyCR >= 17.6 && PartyCR <= 19) 
+            else if (PartyCR >= 17.6 && PartyCR <= 19) 
             { 
                 Balor
             }
-            if (PartyCR >= 19.1 && PartyCR <= 20)
+            else if (PartyCR >= 19.1 && PartyCR <= 20)
             {
                 Ancient Brass Dragon
                 ancient White Dragon
                 Pit Fiend
             }
-            if (PartyCR >= 20.1 && PartyCR <= 30)
+            else if (PartyCR >= 20.1 && PartyCR <= 30)
             {
                 Ancient Black Dragon
                 Ancient Copper Dragon

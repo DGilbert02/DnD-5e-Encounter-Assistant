@@ -27,18 +27,26 @@ namespace DnD_5e_Encounter_Calculator
                         partyList.AdventurerList.Add(adventurer);
                         Console.WriteLine("Please state the level of the next party member");
                     }
-                Console.WriteLine("The Challenge Rating of the party is " + cRCalculator.CRCalc(partyList.AdventurerList) + "!");
+                double PartyCR = cRCalculator.CRCalc(partyList.AdventurerList);
+                Console.WriteLine("The Challenge Rating of the party is " + PartyCR + "!");
 
-                Console.WriteLine("");
+                Console.WriteLine("Would you like to veiw the list of equivilent teir monsters[1]. or calcutate the challenge rating of a different party[2]?");
                 int Response2 = int.Parse(Console.ReadLine());
                 if (Response2 == 1)
                 {
-
+                    ApiSorter.MonsterSorter(PartyCR);
                 }
-
+                else if (Response2 == 2)
+                {
+                    //Create way to start again from the beginning.
+                }
+                else
+                {
+                    Console.WriteLine("Not A valid Response");
+                }
             }
 
-            if (Response1 == 2)
+            else if (Response1 == 2)
             {
                 DnD5eApiCall.InitializeAPI();
             }

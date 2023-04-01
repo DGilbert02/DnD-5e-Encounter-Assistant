@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DnD_5e_Encounter_Calculator.CR0;
 
 namespace DnD_5e_Encounter_Calculator
 {
@@ -12,8 +13,9 @@ namespace DnD_5e_Encounter_Calculator
         {
             internal string Name { get; set; }
         }
-
-        List<CROne8thMonster> cr1 = new()
+        internal static void CROne8thPrint()
+        {
+            List<CROne8thMonster> crOne8th = new()
                 {
                 new CROne8thMonster() { Name = "Bandit" },
                 new CROne8thMonster() { Name = "Blood Hawk" },
@@ -36,5 +38,11 @@ namespace DnD_5e_Encounter_Calculator
                 new CROne8thMonster() { Name = "Tribal Warrior" },
                 new CROne8thMonster() { Name = "Twig Blight" },
                 };
+
+            foreach (CROne8thMonster aMonster in crOne8th)
+            {
+                Console.WriteLine(aMonster.Name);
+            }
+        }
     }
 }

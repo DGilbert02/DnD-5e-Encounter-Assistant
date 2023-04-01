@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DnD_5e_Encounter_Calculator.CRHalf;
 
 namespace DnD_5e_Encounter_Calculator
 {
@@ -12,7 +13,8 @@ namespace DnD_5e_Encounter_Calculator
         {
             internal string Name { get; set; }
         }
-
+        internal static void CR1Print() 
+        {
         List<CR1Monster> cr1 = new()
                 {
                 new CR1Monster() { Name = "Animated Armor" },
@@ -40,7 +42,11 @@ namespace DnD_5e_Encounter_Calculator
                 new CR1Monster() { Name = "Spy" },
                 new CR1Monster() { Name = "Swarm Of Quippers" },
                 new CR1Monster() { Name = "Tiger" },
-
                 };
+            foreach (CR1Monster aMonster in cr1)
+            {
+                Console.WriteLine(aMonster.Name);
+            }
+        }
     }
 }

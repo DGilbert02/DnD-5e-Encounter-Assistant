@@ -28,362 +28,105 @@ namespace DnD_5e_Encounter_Calculator
 {
     internal class ApiSorter
     {
-        
-        string displayList = "";
-        internal ApiSorter(int PartyCR,CR0 cr0)
-        {// all Monsters to be made into lists by CR
+        internal static void MonsterSorter(double PartyCR)
+        {
+            // Max number in all if statements is the Challenge Rating of the monster.
             if (PartyCR == 0) 
             {
-                string displayList = cr0.CR0Print();
+                CR0.CR0Print();
             }
             else if (PartyCR >= 0.1 && PartyCR <= 0.125)
             {
-                
+                CROne8th.CROne8thPrint();
             }
             else if (PartyCR >= 0.126 && PartyCR <= 0.25) 
             {
-                //Acolyte
-                //Axe Beak
-                //Blink Dog
-                //Boar
-                //Constrictor Snake
-                //Draft Horse
-                //Dretch
-                //Drow
-                //Elk
-                //Flying Sword
-                //Giant Badger
-                //Giant Bat
-                //Giant Centipede
-                //Giant Frog
-                //Giant Lizard
-                //Giant Owl
-                //Giant Piosonous Snake
-                //Giant Wolf Spider
-                //Goblin
-                //Grinlock
-                //Panther
-                //Pseudodragon
-                //Pteranodon
-                //Riding Horse
-                //Skeleton
-                //Sprite
-                //Steam Mephit
-                //Swarm Of Bats
-                //Swarm Of Rats
-                //Swarm Of Ravens
-                //Violet Fungus
-                //Wolf
-                //Zombie
+                CROne4th.CROne4thPrint();
             }
             else if (PartyCR >= .26 && PartyCR <= .50)
             {
-                //Crocodile
-                //Darkmantle
-                //Deep Gnome
-                //Dust Mephit
-                //Giant Goat
-                //Giant Sea Horse
-                //Giant Wasp
-                //Gnoll
-                //Gray Ooze
-                //Hobgoblin
-                //Ice Mephit
-                //Lizardfolk
-                //Magma Mephit
-                //Magmin
-                //Orc
-                //Reef Shark
-                //Rust Monster
-                //Sahuagin
-                //Satyr
-                //Scout
-                //Shadow
-                //Swarm Of Insects
-                //Swarm Of Beetles
-                //Swarm Of Centipedes
-                //Swarm Of Spiders
-                //Swarm Of Wasps
-                //Thug
-                //Warhorse Skeleton
-                //Worg
-
+                CRHalf.CRHalfPrint();
             }
             else if (PartyCR >= .51 && PartyCR <= 1)
             {
-                //Animated Armor
-                //Brass Dragon Wyrmling
-                //Brown Bear
-                //Bugbear
-                //Copper Dragon Wyrmling
-                //Death Dog
-                //Dire Wolf
-                //Dryad
-                //Duergar
-                //Ghoul
-                //Giant Eagle
-                //Giant Hyena
-                //Giant Octopus
-                //Giant Spider
-                //Giant Toad
-                //Giant Vulture
-                //Harpy
-                //Hippogriff
-                //Imp
-                //Lion
-                //Quasit
-                //Specter
-                //Spy
-                //Swarm Of Quippers
-                //Tiger
+                CR1.CR1Print();
             }
             else if (PartyCR >= 1.1 && PartyCR <= 2) 
             {
-                Allosaurus
-                Ankheg
-                Awakened Tree
-                Azer
-                Bandit Captain
-                Berserker
-                Black Dragon Wyrmling
-                Centaur
-                Cult Fanatic
-                Druid
-                Ettercap
-                Gargoyle
-                Gelatinous Cube
-                Ghast
-                Giant Boar
-                Giant Constrictor Snake
-                Giant Elk
-                Gibbering Mouther
-                Green Dragon Wyrmling
-                Grick
-                Griffon
-                Hunter Shark
-                Merrow
-                Mimic
-                Minotaur Skeleton
-                Nothic
-                Ochre Jelly
-                Ogre Zombie
-                Pegasus
-                Plesiosaurus
-                Polar Bear
-                Priest
-                Rhinoceros
-                Rug Of Smothering
-                Saber Toothed Tiger
-                Sea Hag
-                Silver Dragon Wyrmling
-                Swarm Of Poisonous Snakes
-                Wererat
-                White Dragon Wyrmling
-                Will O Wisp
+                CR2.CR2Print();
             }
             else if (PartyCR >= 2.1 && PartyCR <= 3) 
             {
-                Ankylosaurus
-                Basilisk
-                Bearded Devil
-                Blue Dragon Wyrmling
-                Doppelganger
-                Giant Scorpion
-                Gold Dragon Wyrmling
-                Green Hag
-                Hell Hound
-                Killer Whale
-                Knight
-                Manticore
-                Minotaur
-                Mummy
-                Nightmare
-                Owlbear
-                Phase Spider
-                Spectator
-                Veteran
-                Werewolf
-                Wight
-                Winter Wolf
-                Yeti
+                CR3.CR3Print();
             }
             else if (PartyCR >= 3.1 && PartyCR <= 4) 
             {
-                Banshee
-                Black Pudding
-                Chuul
-                Couatl
-                Elephant
-                Ettin
-                Flameskull
-                Ghost
-                Incubus
-                Lamia
-                Red Dragon Wyrmling
-                Succubus
-                Wereboar
-                Weretiger
+                CR4.CR4Print();
             }
             else if (PartyCR >= 4.1 && PartyCR <= 5)
             {
-                Air - Elemental
-                Barbed Devil
-                Bulette
-                Dust Devil
-                Earth Elemental
-                Fire Elemental
-                Flesh Golem
-                Giant Crocodile
-                Giant Shark
-                Gladiator
-                Gorgon
-                Half - Red Dragon Veteran
-                Hill Giant
-                Night Hag
-                Otyugh
-                Roper
-                Salamander
-                Shambling Mound
-                Triceratops
-                Troll
-                Unicorn
-                Vampire Spawn
-                Water Elemental
-                Werebear
-                Wraith
-                Xorn
+                CR5.CR5Print();
             }
             else if (PartyCR >= 5.1 && PartyCR <= 6) 
             {
-                Chimera
-                Cyclops
-                Drider
-                Invisible Stalker
-                Mage
-                Mammoth
-                Medusa
-                Vrock
-                Wyvern
-                Young Brass Dragon
-                Young White Dragon
+                CR6.CR6Print();
             }
             else if (PartyCR >= 6.1 && PartyCR <= 7) 
             { 
-                Giant Ape
-                Oni
-                Sheild Guardian
-                Stone Giant
-                Young Black Dragon
+                CR7.CR7Print();
             }
             else if (PartyCR >= 7.1 && PartyCR <= 8) 
             {
-                Assassin
-                Chain Devil
-                Cloaker
-                Frost Giant
-                Hezrou
-                Hydra
-                Spirit Naga
-                Tyannosaurus Rex
-                Young Bronze Dragon
-                Young Green Dragon
+                CR8.CR8Print();
             }
             else if (PartyCR >= 8.1 && PartyCR <= 9) 
             { 
-                Bone Devil
-                Clay Golem
-                Cloud Giant
-                Fire Giant
-                Glabrezu
-                Treant
-                Young Blue Dragon
-                Young Sliver Dragon
+                CR9.CR9Print();
             }
             else if (PartyCR >= 9.1 && PartyCR <= 10)
             {
-                Aboleth
-                Deva
-                Guardian Naga
-                Stone Golem
-                Young Gold Dragon
-                Young Red Dragon
+                CR10.CR10Print();
             }
             else if (PartyCR >= 10.1 && PartyCR <= 11) 
             {
-                Behir
-                Djinni
-                Efreeti
-                Gynosphinx
-                Horned Devil
-                Remorhaz
-                Roc    
+                CR11.CR11Print();
             }
             else if (PartyCR >= 11.1 && PartyCR <= 12) 
             {
-                Archmage
-                Erinyes 
+                CR12.CR12Print(); 
             }
             else if (PartyCR >= 12.1 && PartyCR <= 13)
             {
-                Adult Brass Dragon
-                Adult White Dragon
-                Nalfeshnee
-                Rakshasa
-                Storm Giant
-                Vampire
+                CR13.CR13Print();
             }
             else if (PartyCR >= 13.1 && PartyCR <= 14)
             {
-                Adult Black Dragon
-                Adult Copper Dragon
-                Ice Devil
-                    }
+                CR14.CR14Print();
+            }
             else if (PartyCR >= 14.1 && PartyCR <= 15)
             {
-                Adult Bronze Dragon
-                Adult Green Dragon
-                Mummy Lord
-                Purple Worm
+                CR15.CR15Print();
             }
             else if (PartyCR >= 15.1 && PartyCR <= 16)
             {
-                Adult Blue Dragon
-                Adult Silver Dragon
-                Iron Golem
-                Marilith
-                Planetar
-                    }
+                CR16.CR16Print();
+            }
             else if (PartyCR >= 16.1 && PartyCR <= 17.5)
             {
-                Adult Gold Dragon
-                Adult Red Dragon
-                Androsphinx
-                Dragon Turtle
-                    }
+                CR17.CR17Print();
+            }
+            // There is no CR 18 in the base game
             else if (PartyCR >= 17.6 && PartyCR <= 19) 
             { 
-                Balor
+                CR19.CR19Print();
             }
             else if (PartyCR >= 19.1 && PartyCR <= 20)
             {
-                Ancient Brass Dragon
-                ancient White Dragon
-                Pit Fiend
+                CR20.CR20Print();
             }
             else if (PartyCR >= 20.1 && PartyCR <= 30)
             {
-                Ancient Black Dragon
-                Ancient Copper Dragon
-                Lich
-                Solar
-                Ancient Bronze Dragon
-                Ancient Green Dragon
-                Ancient Blue Dragon
-                Ancient Silver Dragon
-                Kraken
-                Ancient Gold Dragon
-                Ancient Red Dragon
-                Tarrasque
+                CR21to30.CR21to30Print();
             }
             else
             {

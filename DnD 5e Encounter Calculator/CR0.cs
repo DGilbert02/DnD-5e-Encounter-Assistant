@@ -13,8 +13,9 @@ namespace DnD_5e_Encounter_Calculator
         {
             internal string Name { get; set; }
         }
-
-        List<CR0Monster> cr0 = new()
+        internal static void CR0Print()
+        {
+            List<CR0Monster> cr0 = new()
                 {
                     new CR0Monster() { Name = "Awakened Shrub" },
                     new CR0Monster() { Name = "Baboon" },
@@ -46,8 +47,7 @@ namespace DnD_5e_Encounter_Calculator
                     new CR0Monster() { Name = "Vulture" },
                     new CR0Monster() { Name = "Weasel" }
                 };
-        internal void CR0Print()
-        {
+ 
             foreach (CR0Monster aMonster in cr0)
             {
                 Console.WriteLine(aMonster.Name);

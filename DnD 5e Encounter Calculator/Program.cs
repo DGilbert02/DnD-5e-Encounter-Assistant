@@ -3,7 +3,6 @@ using System.Xml.Linq;
 using Xceed.Wpf.Toolkit;
 using static DnD_5e_Encounter_Calculator.CRCalculator;
 using static DnD_5e_Encounter_Calculator.PartyList;
-//using static DnD_5e_Encounter_Calculator.DnD5eApiCall;
 namespace DnD_5e_Encounter_Calculator
 {
     public class Program
@@ -13,7 +12,6 @@ namespace DnD_5e_Encounter_Calculator
             bool run = true;
             while (run == true)
             {
-                //DnD5eApiCall.InitializeAPI();
                 Console.WriteLine("Hello I'm the D&D Encounter Assistant, How Can I Help You Today?");
                 Console.WriteLine("Press 1 to Use The Combat Rating Calulator, Press 2 to exit");
                 int Response1 = int.Parse(Console.ReadLine());
@@ -51,23 +49,6 @@ namespace DnD_5e_Encounter_Calculator
                                 calcRun = false;
                             }
                             
-                            //Console.WriteLine("");
-                            //Console.WriteLine("Would you like to veiw the stats of a particular monster[1], or exit to the start[2]?");
-                            //int Response3 = int.Parse(Console.ReadLine());
-                            //if (Response3 == 1)
-                            //{
-                            //    Console.WriteLine("Please input the name of the monster you wish to view.");
-                            //    string name = Console.ReadLine();
-                            //    //Console.WriteLine(monster);
-                            //}
-                            //else if (Response3 == 2)
-                            //{
-
-                            //}
-                            //else
-                            //{
-                            //    Console.WriteLine("Not A Valid Response");
-                            //}
                         }
                         else if (Response2 == 2)
                         {

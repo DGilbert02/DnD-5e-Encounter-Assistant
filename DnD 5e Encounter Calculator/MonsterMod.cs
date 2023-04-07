@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace DnD_5e_Encounter_Calculator
 {
-    internal class MonsterModel
+    public class MonsterModel
     {
-        internal string Name { get; set; }
-        internal int Challenge_Rating { get; set; }
+        public string Name { get; set; }
+        public int Challenge_Rating { get; set; }
     }
+    //public string MonsterStats(MonsterModel)
+    //{
+    //    return Console.WriteLine(Name);
+    //}
 }
